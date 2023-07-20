@@ -44,7 +44,9 @@ function App() {
   // console.log(data1, "this is blog data");
 
   const deletePost = (id: string) => {
-    axios.delete(`https://blog-express-api-z4h9.onrender.com/api/blogs/${id}`, {
+    const confirmResult = confirm("Are u sure to delete it?")
+    if(confirmResult) {
+      axios.delete(`https://blog-express-api-z4h9.onrender.com/api/blogs/${id}`, {
       headers: {
         accept: "application/json"
       }
@@ -54,6 +56,7 @@ function App() {
         getDataApi();
       }
     }).catch((err)=>console.log(err))
+    }
   }
 
   return (
