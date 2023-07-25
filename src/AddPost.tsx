@@ -35,6 +35,7 @@ function AddPost({func} : PropsAddPost) {
       alert("please fill all data")
     }
   }
+  console.log(React);
   return (
     <div>
       <form onSubmit={submitHandler}>
